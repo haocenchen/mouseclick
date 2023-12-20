@@ -1,3 +1,5 @@
+
+
 说明文件：鼠标点击器
 
 1. 文件概述：
@@ -60,3 +62,45 @@ if name == "main":
 
 未声明其他许可情况下，受到版权保护。
 使用前请仔细阅读代码并遵循相关法律法规。
+
+----------------------------------------------------------------------------------------------
+Purpose: This script implements a simple mouse clicker that can start/stop automatic mouse clicking when the F9 key is pressed, and displays the number of clicks and running status.
+Dependencies:
+pyautogui: Used for simulating mouse clicks.
+keyboard: Used for detecting keyboard events.
+time: Used for implementing click intervals.
+tkinter: Used for creating a simple GUI window.
+threading: Used for running the mouse clicking task in the background.
+Main Functionality:
+Mouse Clicking Functionality: Simulates mouse clicks to achieve automatic clicking functionality.
+Start/Stop Functionality: Toggles the running state of the autoclicker by pressing the F9 key.
+Count Display: Displays the number of clicks executed so far.
+GUI Interface: Creates a simple window using tkinter to display the number of clicks and running status.
+Global Variables:
+count: Global variable to record the number of mouse clicks.
+running: Global variable to record the running state of the autoclicker.
+Main Functions and Threads:
+click_mouse(interval):
+Functionality: Simulates mouse clicks in the background with an interval of 1/interval seconds while the autoclicker is running.
+Parameters: interval - Controls the click interval parameter.
+Thread: Runs in the background thread and starts when the F9 key is pressed.
+update_label():
+Functionality: Updates the click count and running status displayed on the GUI interface.
+Thread: Uses tkinter's after method to execute every 1 second.
+on_press(event):
+Functionality: Captures keyboard events and toggles the running state of the autoclicker when the F9 key is pressed.
+Parameters: event - Keyboard event object.
+Trigger: Triggered when the F9 key is pressed.
+Main Program Entry:
+if name == "main": Main program entry point, sets click interval and creates a tkinter window. Starts keyboard event listening and GUI update threads.
+Usage:
+After running the script, press the F9 key to start/stop automatic clicking. Close the window or press the Esc key to end script execution.
+Notes:
+The script uses global variables to ensure correct handling in multi-threaded environments. When pressing the F9 key, it may take about one second to start/stop clicking.
+Suitable Scenarios:
+Suitable for automated testing scenarios or other automated tasks that require simulating mouse clicks.
+Improvements and Extensions:
+The click interval, additional keyboard shortcut functions, or improvements to the GUI interface can be adjusted according to requirements. Higher-level GUI libraries or tools can be used to make the interface more user-friendly and flexible.
+Copyright and License:
+Unless otherwise stated, this script is protected by copyright. Please read through the code carefully and comply with relevant laws and regulations before use.
+
